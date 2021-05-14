@@ -1,0 +1,11 @@
+.card-body {
+    padding: 0% !important;
+}
+
+img {
+    height: 50%;
+}
+
+.pizza-price {
+    color: #ff5200;
+}
