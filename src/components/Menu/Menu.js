@@ -6,12 +6,6 @@ import MenuItem from "../Menu/MenuItem";
 
 class Menu extends Component {
 
-    componentDidMount() {
-        let title= this.props.location.state.parent;
-        this.setState({parent: title});
-        {console.log(this.state.parent)}
-    }
-
     render() {
     return (
         <div className="menu">
@@ -22,3 +16,4 @@ class Menu extends Component {
 }
 
 export default Menu;
+
