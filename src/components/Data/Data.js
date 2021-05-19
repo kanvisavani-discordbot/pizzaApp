@@ -59,22 +59,26 @@ export const menuData = [
     {
         id: 'm1',
         title: 'sizes',
-        imageUrl: 'http://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179'
+        imageUrl: 'http://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179',
+        priority: 'default'
     },
     {
         id: 'm2',
-        title: 'bevrages',
-        imageUrl: 'http://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179'
+        title: 'cocks',
+        imageUrl: 'http://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179',
+        priority: 'non'
     },
     {
         id: 'm3',
         title: 'dips',
-        imageUrl: 'http://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179'
+        imageUrl: 'http://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179',
+        priority: 'non'
     },
     {
         id: 'm4',
         title: 'toppings',
-        imageUrl: 'http://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179'
+        imageUrl: 'http://cdn.shopify.com/s/files/1/2836/2982/products/Feta_hero_grande.jpg?v=1529434179',
+        priority: 'non'
     }
 ]
 
@@ -96,13 +100,13 @@ export const bevragesData = [
 export const offersData = [
     {
         id: 'o1',
-        title: 'Large Pizza with 2 Toppings + Dip + Cock',
+        title: 'Large Pizza with 2 Toppings + Dips + Cock',
         price: '$7.99',
         imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHG7BGfkKcVGytvJCmxDknu4BaIdvBEz0tveAglrCNUTEEfXBQViuOtu8aOXZYzTlDsKU&usqp=CAU'
     },
     {
         id: 'o2',
-        title: 'Medium Pizza with 3 Toppings + Dip',
+        title: 'Medium Pizza with 3 Toppings + Dips',
         price: '$8.99',
         imageUrl: 'https://kitchenatics.com/wp-content/uploads/2020/09/Cheese-pizza-1.jpg'
     },

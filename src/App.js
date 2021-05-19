@@ -13,6 +13,7 @@ import {bevragesData} from './components/Data/Data';
 import Offers from './components/Offers/Offers';
 import {offersData} from './components/Data/Data';
 import Menu from './components/Menu/Menu';
+import Cart from './components/Cart/Cart';
 import {menuData} from './components/Data/Data';
 import Login from './components/Login/Login';
 
@@ -28,12 +29,13 @@ const App = () => {
         <div>
             <Router>
                 <switch>
-                <Route path='/menu' component={(props) => (<> <Menu items={menuData}/> </>)}/>
+                <Route path='/menu' component={(props) => (<> <Menu items={menuData} /> </>)}/>
                 <Route path='/' exact render={(props) => (<> <Offers items={offersData}/> </>)}/>
                 <Route path='/toppings' component={(props) => (<> <Toppings items={toppingsData}/> </>)}/>
                 <Route path='/dips' component={(props) => (<> <Dips items={dipsData}/> </>)}/>
                 <Route path='/bevrages' component={(props) => (<> <Bevrages items={bevragesData}/> </>)}/>
                 <Route path='/sizes' component={(props) => (<> <Sizes items={sizesData}/> </>)}/>
+                    <Route path='/cart' component={<Cart/>}/>
                 </switch>
         </Router>
         </div>

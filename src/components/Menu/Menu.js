@@ -3,17 +3,20 @@ import Header from "../UI/Header";
 import Card from "../UI/Card";
 import React, {Component} from "react";
 import MenuItem from "../Menu/MenuItem";
+import { useLocation } from "react-router-dom";
 
-class Menu extends Component {
+const Menu = (props)=> {
+    const { parent } = useLocation();
 
-    render() {
     return (
         <div className="menu">
         <Header pageTitle="Menu"/>
-            {this.props.items.map(item => <MenuItem key={item.id} title={item.title} imageUrl={item.imageUrl}/>)}
+            {props.items
+                .filter(item => (parent.title.toLowerCase().includes(item.title.toLowerCase()) || item.priority === 'default'))
+                .map(filteredItem => <MenuItem  key={filteredItem.id} title={filteredItem.title} imageUrl={filteredItem.imageUrl}/>)}
         </div>
-    )}
+    )
 }
 
-export default Menu;
 
+export default Menu;

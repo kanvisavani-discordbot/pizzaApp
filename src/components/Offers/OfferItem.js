@@ -1,15 +1,16 @@
 import './OfferItem.css';
 import react, {Component} from "react";
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import Card from '../UI/Card';
 
 class OfferItem extends Component {
-render() {
+render(){
     const {imageUrl,title,price} =this.props;
+
     return (
         <div className="col-sm-4">
             <Card className='offer-item'>
-                <Link to={{pathname: '/menu', state: {parent: title}}} className="card-body">
+                <Link to={{pathname:'/menu',parent: {title}}} className="card-body">
                     <img className="img-size"
                          src={imageUrl}
                          alt={title}/>
