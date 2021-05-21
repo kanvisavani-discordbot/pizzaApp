@@ -1,18 +1,18 @@
 import './MenuItem.css';
 import {Link} from 'react-router-dom';
 import React from 'react';
-import {FaIcons} from 'react-icons/fa';
 
 const MenuItem = (props) => {
 
-    const {imageUrl,title}=props;
+    const {imageUrl,title,parentTitle}=props;
 
     return (
         <div className="menuItem text-center">
             <img className="img-bar"
                  src={imageUrl}
                  alt={title}/>
-            <Link to={title}>{title}</Link>
+            {console.log('menuItem '+parentTitle)}
+            <Link to={{pathname:title,parent: parentTitle}}>{title}</Link>
             <hr/>
         </div>
     );

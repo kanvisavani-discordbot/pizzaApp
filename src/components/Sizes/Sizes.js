@@ -1,21 +1,33 @@
 import './Sizes.css';
 import React from 'react';
+import {useHistory, useLocation} from 'react-router-dom';
 import SizeItem from './SizeItem';
 import Header from '../UI/Header';
 import Footer from '../UI/Footer';
 
-const Sizes = (props)=> {
-
-    const selectSize = (getSize) => {
-        console.log(getSize);
+class Sizes extends React.Component  {
+    constructor(props){
+        super(props);
+        this.state = {
+            pizzaSize: null
+        }
     }
 
-    return (<div className="sizes">
-        <Header pageTitle="sizes"/>
-        {props.items.map(item => <SizeItem key={item.id} title={item.title} imageUrl={item.imageUrl} count={item.count}/>)}
+    handleCallback = (sizeOfPizza) =>{
+        this.setState({pizzaSize: sizeOfPizza})
+    }
 
-        <Footer onClick={selectSize}/>
-    </div>)
+    render() {
+        const {pizzaSize} = this.state;
+        return (<div className="sizes">
+            <Header pageTitle="sizes"/>
+            {/*{console.log('sizes '+this.location.parent)}*/}
+            {this.props.items.map(item => <SizeItem key={item.id} title={item.title} imageUrl={item.imageUrl}
+                                               count={item.count} parentCallback = {this.handleCallback}/>)}
+
+            <Footer clickHandler={()=>{console.log(pizzaSize)}} title={'Save&Continue'}/>
+        </div>)
+    }
 }
 
 export default Sizes;

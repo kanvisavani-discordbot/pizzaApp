@@ -11,9 +11,10 @@ const Menu = (props)=> {
     return (
         <div className="menu">
         <Header pageTitle="Menu"/>
+            {console.log('Menu '+parent.title)}
             {props.items
                 .filter(item => (parent.title.toLowerCase().includes(item.title.toLowerCase()) || item.priority === 'default'))
-                .map(filteredItem => <MenuItem  key={filteredItem.id} title={filteredItem.title} imageUrl={filteredItem.imageUrl}/>)}
+                .map(filteredItem => <MenuItem parentTitle={parent.title} key={filteredItem.id} title={filteredItem.title} imageUrl={filteredItem.imageUrl}/>)}
         </div>
     )
 }
