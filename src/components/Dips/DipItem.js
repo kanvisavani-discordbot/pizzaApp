@@ -1,18 +1,22 @@
 import React, {useState} from 'react';
 import './DipItem.css';
 import Card from '../UI/Card';
+import {observer} from "mobx-react-lite";
+import {menu_store} from "../Menu/menu_store";
 
-const DipItem = (props) => {
+export const DipItem = observer((props) => {
 
-    const [count, setCount] = useState(props.count);
-    const {imageUrl,title}=props;
+    const {imageUrl,title, index}=props;
+    const [count, setCount] = useState(menu_store.pizzaDips[index]);
 
     const handlerIncrement = () => {
         setCount( count + 1);
+        menu_store.pizzaDips[index]=count+1;
     }
 
     const handlerDecrement = () => {
         setCount(count == 0 ? 0 :count - 1);
+        menu_store.pizzaDips[index]=count == 0 ? 0 :menu_store.pizzaDips[index] - 1;
     }
 
     return (
@@ -34,6 +38,4 @@ const DipItem = (props) => {
             </div>
         </Card>
     );
-}
-
-export default DipItem;
+})

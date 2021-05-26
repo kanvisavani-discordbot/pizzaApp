@@ -1,18 +1,22 @@
 import React, {useState} from 'react';
 import './ToppingItem.css';
 import Card from '../UI/Card';
+import {observer} from "mobx-react-lite";
+import {menu_store} from "../Menu/menu_store";
 
-const ToppingItem = (props) => {
+export const ToppingItem = observer( (props) => {
 
-    const [count, setCount] = useState(props.count);
-    const {imageUrl,title}=props;
+    const {imageUrl,title, index}=props;
+    const [count, setCount] = useState(menu_store.pizzaToppings[index]);
 
     const handlerIncrement = () => {
         setCount( count + 1);
+        menu_store.pizzaToppings[index]=count+1;
     }
 
     const handlerDecrement = () => {
         setCount(count == 0 ? 0 :count - 1);
+        menu_store.pizzaToppings[index]=count == 0 ? 0 :menu_store.pizzaToppings[index] - 1;
     }
 
     return (
@@ -34,6 +38,4 @@ const ToppingItem = (props) => {
             </div>
         </Card>
     );
-}
-
-export default ToppingItem;
+})

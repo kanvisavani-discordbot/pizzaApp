@@ -2,20 +2,17 @@ import './MenuItem.css';
 import {Link} from 'react-router-dom';
 import React from 'react';
 
-const MenuItem = (props) => {
+export const MenuItem = (props) => {
 
-    const {imageUrl,title,parentTitle}=props;
+    const {imageUrl,title}=props;
 
     return (
         <div className="menuItem text-center">
             <img className="img-bar"
                  src={imageUrl}
                  alt={title}/>
-            {console.log('menuItem '+parentTitle)}
-            <Link to={{pathname:title,parent: parentTitle}}>{title}</Link>
+            <Link to={{pathname:title}}>{title}</Link>
             <hr/>
         </div>
     );
 }
-
-export default MenuItem;
