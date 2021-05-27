@@ -23,7 +23,7 @@ export const BevrageItem = observer(  (props) => {
         <Card className='bevrage-item'>
             <div className="card-horizontal">
                 <div className="img-square-wrapper">
-                    <img className="img-size"
+                    <img className="img-size img-responsive"
                          src={imageUrl}
                          alt={title}/>
                 </div>
