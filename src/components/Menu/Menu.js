@@ -11,8 +11,7 @@ import {observer} from "mobx-react-lite";
 import Footer from "../UI/Footer";
 
 export const Menu = observer(()=> {
-    function clickHandler(){
-        console.log('clicked!!')
+    function clickAction(){
         menu_store.pizzaPriceCalculation()
     }
     return (
@@ -22,7 +21,7 @@ export const Menu = observer(()=> {
                 .filter(item => (menu_store.pizzaTitle.toLowerCase().includes(item.title.toLowerCase()) || item.priority === 'default'))
                 .map(filteredItem => <MenuItem key={filteredItem.id} title={filteredItem.title} imageUrl={filteredItem.imageUrl}/>)
             }
-            <Footer componentName={'/cart'} onClick={clickHandler()} title={'Add to Cart'}/>
+            <Footer componentName={'/cart'} clickHandler={clickAction} title={'Add to Cart'}/>
 
         </div>
     )

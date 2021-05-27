@@ -21,7 +21,7 @@ export const OfferItem = observer((props) => {
                          src={imageUrl}
                          alt={title}/>
                 </Link>
-                <div className="card-footer"><span className="pizza-price font-weight-bold font-italic">{price}</span> {title}</div>
+                <div className="card-footer"><span className="pizza-price font-weight-bold font-italic">${price}</span> {title}</div>
             </Card>
         </div>
     )
