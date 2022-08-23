@@ -5,7 +5,7 @@
 
 trigger:
 - main 
-- *
+- '*'
 
 pool:
   vmImage: windows-latest
@@ -21,10 +21,10 @@ steps:
     npm run build
   displayName: 'npm install and build'
   
-  schedules:
-- cron: "1 * * * *"
+schedules:
+- cron: '1 * * * *'
   displayName: Weekly Sunday build
   branches:
     include:
-    - *
+    - '*'
   always: true
